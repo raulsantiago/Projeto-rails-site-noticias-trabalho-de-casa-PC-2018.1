@@ -1,0 +1,45 @@
+<%= form_with(model: noticium, local: true) do |form| %>
+  <%= hidden_field_tag "noticium[usuario_id]", current_user.id %>
+  <% if noticium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(noticium.errors.count, "error") %> Não foi possível salvar.</h2>
+
+      <ul>
+      <% noticium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo, id: :noticium_titulo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :texto %>
+    <%= form.text_field :texto, id: :noticium_texto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :categoria %>
+    <%= form.text_field :categoria, id: :noticium_categoria %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :noticium_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_public %>
+    <%= form.datetime_select :data_public, id: :noticium_data_public %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

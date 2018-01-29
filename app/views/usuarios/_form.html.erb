@@ -1,0 +1,63 @@
+<%= form_for @usuario, url: @usuario.persisted? ? :edit_usuario : :new_usuario do |form| %>
+
+  <div class="field">
+  <% if @usuario.errors.any? && @usuario.errors[:nome] %>
+    <%= form.label "Nome #{@usuario.errors[:nome].first}" %>
+  <% else %>
+    <%= form.label "Nome" %>
+  <% end %>
+  <%= form.text_field :nome %>
+</div>
+  <br>
+
+<div class="field">
+  <% if @usuario.errors.any? && @usuario.errors[:email] %>
+    <%= form.label "E-mail #{@usuario.errors[:email].first}" %>
+  <% else %>
+    <%= form.label "E-mail" %>
+  <% end %>
+    <%= form.email_field :email %>
+</div>
+  <br>
+
+<div class="field">
+  <% if @usuario.errors.any? && @usuario.errors[:password] %>
+    <%= form.label "Senha #{@usuario.errors[:password].first}" %>
+  <% else %>
+    <%= form.label "Senha" %>
+  <% end %>
+    <%= form.password_field :password %>
+</div>
+  <br>
+
+  <div class="field">
+    <% if @usuario.errors.any? && @usuario.errors[:password_confirmation] %>
+      <%= form.label "Confirmação de Senha #{@usuario.errors[:password_confirmation].first}" %>
+    <% else %>
+      <%= form.label "Confirmação de Senha" %>
+    <% end %>
+      <%= form.password_field :password_confirmation %>
+  </div>
+    <br>
+
+
+<div class="field">
+  <% if @usuario.errors.any? && @usuario.errors[:admin] %>
+    <%= form.label "Administrador #{@usuario.errors[:admin].first}" %>
+  <% else %>
+    <%= form.label "Administrador" %>
+  <% end %>
+    <%= form.check_box :admin %>
+</div>
+
+
+
+<div class="actions">
+  <% if @usuario.persisted? %>
+    <%= form.submit "Atualizar" %>
+  <% else %>
+    <%= form.submit "Cadastrar" %>
+  <% end %>
+</div>
+
+<% end %>

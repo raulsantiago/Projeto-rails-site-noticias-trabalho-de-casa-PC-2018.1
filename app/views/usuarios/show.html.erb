@@ -1,0 +1,19 @@
+<p>
+  <strong>Nome:</strong>
+  <%= @usuario.nome %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @usuario.email %>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <%= @usuario.admin %>
+</p>
+
+<%= link_to "Todos os Usurários", index_usuarios_path %>
+<%= link_to "Editar", edit_usuario_path(id: @usuario.id) %>
+<%= link_to "Excluir", destroy_usuario_path(id: @usuario.id),
+  method: :delete, data: { confirm: "Certeza que deseja excluir o cadastro? "}%>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  usuario: one
+  noticium: one
+  conteudo: MyString
+
+two:
+  usuario: two
+  noticium: two
+  conteudo: MyString

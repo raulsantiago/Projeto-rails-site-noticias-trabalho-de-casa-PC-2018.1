@@ -1,0 +1,24 @@
+<h1>Notícias</h1>
+<br>
+<% @noticium.each do |noticium| %>
+
+<% @noticium = noticium %>
+
+<tr>
+  <td><%= link_to noticium.titulo, noticium %></td><br>
+  <td>Categoria: <%= noticium.categoria %></td>
+  <td>Data da puclicação: <%= noticium.data_public %></td>
+  <td>Escrito por: <%= noticium.usuario.nome %></td>
+  <td><%= link_to 'Show', noticium %></td>
+  <td>
+    <% if current_user == noticium.usuario %>
+      <%= link_to 'Editar', edit_noticium_path(noticium) %>
+    <% end %>
+    <% if current_user == noticium.usuario || current_user.admin %>
+      <%= link_to 'Exluir', noticium, method: :delete, data: { confirm: 'Tem cetreza?' } %>
+    <% end %><br><br>
+  </td>
+</tr>
+<br>
+
+<% end %>

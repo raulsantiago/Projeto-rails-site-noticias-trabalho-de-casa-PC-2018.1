@@ -5,9 +5,24 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# gerenciamento automatico de imagem
+gem "passgen"
+
+# redimencionamento de imagem
+gem "mini_magick"
+
+# Bliblioteca JavaScript Jquery(framework)
+gem 'jquery-rails', '~> 4.3'
+
+# GEM para fazer paginação
+gem 'will_paginate', '~> 3.1.0'
+
+# GEM para importação de arquivos para o sistema
+gem 'carrierwave', '~> 1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -28,7 +43,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

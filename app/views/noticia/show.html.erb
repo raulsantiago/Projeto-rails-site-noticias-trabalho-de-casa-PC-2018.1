@@ -1,0 +1,34 @@
+<h1><%= @noticium.usuario.nome %></h1>
+
+
+<% if !@noticium.image.file.nil? %>
+ <%= image_tag @noticium.image.url, width:"320", height:"175" %>
+<% end %>
+<br>
+<p>
+  <strong>Titulo:</strong>
+  <%= @noticium.titulo %>
+</p>
+
+<p>
+  <strong>Texto:</strong>
+  <%= @noticium.texto %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @noticium.categoria %>
+</p>
+
+<p>
+  <strong>Usuario que publicou:</strong>
+  <%= @noticium.usuario.nome %>
+</p>
+
+<p>
+  <strong>Data publicação:</strong>
+  <%= @noticium.data_public %>
+</p>
+
+<%= link_to 'Edit', edit_noticium_path(@noticium) %> |
+<%= link_to 'Back', noticia_path %>
