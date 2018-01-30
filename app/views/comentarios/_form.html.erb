@@ -4,20 +4,7 @@
 
 <%= hidden_field_tag "comentario[noticium_id]", params[:id] %>
 
-  <% if comentario.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(comentario.errors.count, "error") %> prohibited this comentario from being saved:</h2>
-
-      <ul>
-      <% comentario.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-  <div class="field">
+    <div class="field">
     <%= form.label :conteudo %>
     <%= form.text_field :conteudo, id: :comentario_conteudo %>
   </div>

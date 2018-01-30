@@ -1,5 +1,3 @@
-<h1><%= @noticium.usuario.nome %></h1>
-
 
 <% if !@noticium.image.file.nil? %>
  <%= image_tag @noticium.image.url, width:"320", height:"175" %>
@@ -29,6 +27,5 @@
   <strong>Data publicação:</strong>
   <%= @noticium.data_public %>
 </p>
-
 <%= link_to 'Edit', edit_noticium_path(@noticium) %> |
 <%= link_to 'Back', noticia_path %>

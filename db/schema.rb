@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180128232603) do
+ActiveRecord::Schema.define(version: 20180130010021) do
 
   create_table "comentarios", force: :cascade do |t|
     t.integer "usuario_id"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20180128232603) do
     t.datetime "updated_at", null: false
     t.index ["noticium_id"], name: "index_comentarios_on_noticium_id"
     t.index ["usuario_id"], name: "index_comentarios_on_usuario_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "usuario_id"
+    t.integer "noticium_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["noticium_id"], name: "index_likes_on_noticium_id"
+    t.index ["usuario_id"], name: "index_likes_on_usuario_id"
   end
 
   create_table "noticia", force: :cascade do |t|

@@ -1,6 +1,8 @@
 class Noticium < ApplicationRecord
 
   belongs_to :usuario
+  #belongs_to :comentario
+
 
   mount_uploader :image, ImageUploader
   validates_presence_of :image

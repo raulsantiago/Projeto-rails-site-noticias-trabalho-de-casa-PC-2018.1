@@ -1,6 +1,8 @@
 class NoticiaController < ApplicationController
   before_action :set_noticium, only: [:show, :edit, :update, :destroy]
   before_action :usuario_nao_logado
+  before_action :usuario_correto, only: [:edit, :update]
+  before_action :usuario_correto_ou_admin, only: [:destroy]
 
   # GET /noticia
   # GET /noticia.json
@@ -11,6 +13,8 @@ class NoticiaController < ApplicationController
   # GET /noticia/1
   # GET /noticia/1.json
   def show
+    @comentario = Comentario.new
+    #@comentarios = @noticium.titulo
   end
 
   # GET /noticia/new

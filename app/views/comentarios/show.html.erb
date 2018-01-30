@@ -1,20 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Comentários</h1>
-
-<h2><%= @comentario.usuario.nome %></h2>
 <br>
 
 <p>
   <strong>Usuario:</strong>
   <%= @comentario.usuario.nome %>
 </p>
-
+<br>
 <p>
-  <strong>Noticium:</strong>
-  <%= @comentario.noticium.categoria %>
+  <strong>Notícia:</strong>
+  <%= @comentario.noticium.titulo %>
 </p>
-
+<br>
 <p>
   <strong>Conteudo:</strong>
   <%= @comentario.conteudo %>

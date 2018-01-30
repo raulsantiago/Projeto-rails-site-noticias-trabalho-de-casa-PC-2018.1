@@ -7,18 +7,16 @@
     <tr>
       <th>Usuario</th>
       <th>Noticium</th>
-      <th>References</th>
       <th>Conteudo</th>
-      <th colspan="4"></th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @comentarios.each do |comentario| %>
       <tr>
-        <td><%= comentario.usuario %></td>
-        <td><%= comentario.noticium %></td>
-        <td><%= comentario.references %></td>
+        <td><%= comentario.usuario.nome %></td>
+        <td><%= comentario.noticium.titulo %></td>
         <td><%= comentario.conteudo %></td>
         <td><%= link_to 'Show', comentario %></td>
         <td><%= link_to 'Edit', edit_comentario_path(comentario) %></td>
